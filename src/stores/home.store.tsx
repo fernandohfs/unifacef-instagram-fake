@@ -1,34 +1,27 @@
 import { action, observable } from 'mobx';
 
-import axios from 'axios';
-
-type Post = {
-  id: number;
-  image: string;
-  description: string;
-  authorId: number;
-  author: {
-    id: number;
-    name: string;
-    avatar: string;
-  };
-};
+import { Post, getPosts } from '../apis/posts.api';
 
 export default class HomeStore {
   @observable photoReady: boolean = false;
 
   @observable posts: Post[] = [];
 
+  @observable isLoading: boolean = false;
+
   @action getPosts = async () => {
     try {
-      const { data: posts } = await axios.get<[Post]>(
-        'http://localhost:3000/feed?_expand=author',
-      );
+      this.isLoading = true;
+
+      const posts = await getPosts();
+
       this.posts = posts;
       console.log('succes');
     } catch (error) {
       console.error(error);
       this.posts = [];
+    } finally {
+      this.isLoading = false;
     }
   };
 
