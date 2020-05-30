@@ -1,0 +1,29 @@
+{
+  "feed": [
+    {
+      "id": 1,
+      "image": "https://i.pinimg.com/originals/26/ea/fc/26eafc0b14488fea03fa8fa9751203ff.jpg",
+      "description": "Are you working for your dreams?",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "image": "https://i.picsum.photos/id/249/500/300.jpg",
+      "description": "This is the gate of my city",
+      "authorId": 1
+    },
+    {
+      "id": 3,
+      "image": "https://i.picsum.photos/id/585/500/300.jpg",
+      "description": "Yeaaah! I love it!",
+      "authorId": 1
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "fernandohfs",
+      "avatar": "https://avatars2.githubusercontent.com/u/9155700?s=460&u=c74034ad9dde167b263c3e08561a7e0e4e92c84f&v=4"
+    }
+  ]
+}

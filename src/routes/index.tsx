@@ -1,26 +1,34 @@
 import * as React from 'react';
+import { StatusBar } from 'react-native';
 
-import Home from '../containers/home';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+import Home from '../containers/home';
 
 const Stack = createStackNavigator();
 
 export enum ROUTES_NAMES {
-  Home = "Home",
+  Home = 'Home',
 }
 
 function Routes() {
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="black" barStyle="dark-content" />
       <Stack.Navigator initialRouteName={ROUTES_NAMES.Home}>
-        <Stack.Screen options={{
-          headerTitle: 'Unifacef App',
-          headerTintColor: '#ffffff',
-          headerStyle: {
-            backgroundColor: 'black',
-          }
-        }} name={ROUTES_NAMES.Home} component={Home} />
+        <Stack.Screen
+          options={{
+            headerTitleAlign: 'center',
+            headerTitle: 'UniFacef Instagram Fake',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+          }}
+          name={ROUTES_NAMES.Home}
+          component={Home}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
